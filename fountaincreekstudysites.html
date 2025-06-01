@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Mapbox Test - Fountain Creek Sites</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
+  <style>
+    body { margin: 0; padding: 0; }
+    #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+  </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoicGhhcGEiLCJhIjoiY203bWFqbGxtMGd5NDJucHZ0YWt0NjVxNyJ9.ztwPq5k3xeHAOeWCIBymuw';
+
+  const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v12',
+    center: [-104.8214, 38.8895], // Center of Colorado Springs
+    zoom: 10
+  });
+
+  // Sample marker
+  const sites = [
+    {
+      name: "Garden of the Gods",
+      coordinates: [-104.8690, 38.8784],
+      description: "Awe-inspiring red rock formations and high visitor use."
+    },
+    {
+      name: "Bear Creek Park",
+      coordinates: [-104.8577, 38.8232],
+      description: "Shady riparian corridors, peaceful trails, and local wildlife."
+    },
+    {
+      name: "Fox Run Creek Park",
+      coordinates: [-104.8133, 39.0631],
+      description: "Coniferous canopy, quiet trails, and clear understory."
+    },
+    {
+      name: "Cottonwood Creek Park",
+      coordinates: [-104.7431, 38.9363],
+      description: "Urban green space with native plantings and recreational areas."
+    }
+  ];
+
+  sites.forEach(site => {
+    new mapboxgl.Marker()
+      .setLngLat(site.coordinates)
+      .setPopup(new mapboxgl.Popup().setHTML(`<h3>${site.name}</h3><p>${site.description}</p>`))
+      .addTo(map);
+  });
+</script>
+
+</body>
+</html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Mapbox Test - Fountain Creek Sites</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
+  <style>
+    body { margin: 0; padding: 0; }
+    #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+  </style>
+</head>
+<body>
+
+<div id="fountainmap"></div>
+
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoicGhhcGEiLCJhIjoiY203bWFqbGxtMGd5NDJucHZ0YWt0NjVxNyJ9.ztwPq5k3xeHAOeWCIBymuw';
+
+  const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v12',
+    center: [-104.8214, 38.8895], // Center of Colorado Springs
+    zoom: 10
+  });
+
+  // Sample marker
+  const sites = [
+    {
+      name: "Garden of the Gods",
+      coordinates: [-104.8690, 38.8784],
+      description: "Awe-inspiring red rock formations and high visitor use."
+    },
+    {
+      name: "Bear Creek Park",
+      coordinates: [-104.8577, 38.8232],
+      description: "Shady riparian corridors, peaceful trails, and local wildlife."
+    },
+    {
+      name: "Fox Run Creek Park",
+      coordinates: [-104.8133, 39.0631],
+      description: "Coniferous canopy, quiet trails, and clear understory."
+    },
+    {
+      name: "Cottonwood Creek Park",
+      coordinates: [-104.7431, 38.9363],
+      description: "Urban green space with native plantings and recreational areas."
+    }
+  ];
+
+  sites.forEach(site => {
+    new mapboxgl.Marker()
+      .setLngLat(site.coordinates)
+      .setPopup(new mapboxgl.Popup().setHTML(`<h3>${site.name}</h3><p>${site.description}</p>`))
+      .addTo(map);
+  });
+</script>
+
+</body>
+
